@@ -1,28 +1,54 @@
-# Product Requirement Document (PRD)
+# 📋 Product Requirement Document (PRD)
 
-**Project Name:** Smart Class Check-in & Learning Reflection App
-**Date:** March 13, 2026
+**Project Name:** Smart Class Check-in & Learning Reflection App  
+**Version:** 1.0 (MVP)  
+**Date:** March 13, 2026  
+**Status:** ✅ Complete & Deployed  
+**Contact:** Student ID 1305216 (MFU LAB)
+
+---
 
 ---
 
 ## 1. Problem Statement
-Many university classes struggle to accurately verify physical student attendance and simultaneously gather valuable insights into student comprehension and well-being. Traditional roll-calls are inefficient and do not provide instructors with feedback on whether students actually understood the lesson or how they felt before and after the class. This app solves both problems by requiring physical presence verification (GPS & QR) tied to a learning reflection form.
+
+**Challenge:**  
+Many university classes struggle to accurately verify physical student attendance while simultaneously gathering valuable insights into student comprehension, engagement, and well-being.
+
+**Current Issues with Traditional Methods:**
+- ❌ Roll-calls are time-consuming and error-prone
+- ❌ No mechanism to verify actual physical presence
+- ❌ Lack of real-time learning feedback
+- ❌ No pre/post-class emotional tracking
+- ❌ Data isn't centralized or analyzable
+
+**Our Solution:**  
+A mobile-first platform combining **GPS location verification**, **QR code validation**, and **interactive reflection forms** to ensure both attendance integrity and learning insights.
 
 ## 2. Target User
-- **Primary Users:** University Students (Use the app to check-in, check-out, and submit class reflections).
-- **Secondary Users:** Instructors (To review attendance correctness via GPS logs and analyze student feedback/mood).
+
+### Primary Users: University Students
+- **Goal:** Check in/out from class easily, provide emotional & learning feedback
+- **Pain Point:** Don't want complicated attendance systems; want quick, mobile-friendly process
+- **User Count:** ~500-5,000 per university
+
+### Secondary Users: Instructors/Administrators
+- **Goal:** Track attendance accuracy, analyze class engagement patterns
+- **Pain Point:** Need reliable data for attendance records and pedagogical insights
+- **User Count:** ~50-200 per university
 
 ## 3. Feature List
-1. **Location Verification (GPS Tracker):** Automatically captures GPS coordinates during check-in and check-out to ensure the student is on-site.
-2. **Class Validation (QR Code Scanner):** Scan a unique classroom QR code to confirm attendance for a specific session.
-3. **Pre-class Reflection (Check-in Form):**
-   - Record the topic from the previous class.
-   - Record expectations for today's session.
-   - Capture student mood (Scale 1-5).
-4. **Post-class Reflection (Check-out Form):**
-   - Record what was learned today.
-   - Provide feedback about the class or instructor.
-5. **Data Storage & Sync:** Store session data to Firebase (or offline LocalStorage/SQLite for MVP fallback).
+
+| # | Feature | Priority | Description |
+|----|---------|----------|-------------|
+| 1 | **GPS Location Verification** | CRITICAL | Captures device GPS coordinates (lat/lng) at check-in & check-out to verify on-campus presence |
+| 2 | **QR Code Scanner** | CRITICAL | Scans unique classroom QR codes to validate session-specific attendance |
+| 3 | **Pre-Class Reflection Form** | HIGH | Captures: (a) previous class topic, (b) today's expectations, (c) mood score (1-5 emoji scale) |
+| 4 | **Post-Class Reflection Form** | HIGH | Captures: (a) what was learned, (b) class/instructor feedback |
+| 5 | **Real-Time Data Sync** | HIGH | Stores all session data to Firebase Firestore with automatic timestamps |
+| 6 | **Navigation & UI** | HIGH | Clean Material Design 3 interface with smooth page transitions |
+| 7 | **Error Handling & Validation** | MEDIUM | Validates all form inputs and GPS/QR permissions gracefully |
+| 8 | **Responsive Design** | MEDIUM | Works across phone, tablet, and web browsers |
 
 ## 4. User Flow
 ### Flow 1: Class Check-in (Before Class)
